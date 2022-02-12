@@ -21,5 +21,9 @@ class ViewController: UIViewController {
     func jodi() {
         print("heyyoo")
     }
+    
+    func HELP() {
+        print("testing one two three")
+    }
 }
 
