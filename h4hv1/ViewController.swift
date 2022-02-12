@@ -25,5 +25,9 @@ class ViewController: UIViewController {
     func HELP() {
         print("testing one two three")
     }
+    
+    func megan() {
+        print("meegan")
+    }
 }
 
