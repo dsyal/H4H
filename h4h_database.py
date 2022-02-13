@@ -6,21 +6,32 @@ connection = sqlite3.connect('h4h_database.db')
 cursor = connection.cursor()
 
 
+
+
 # create USER table
 cursor.execute("DROP TABLE IF EXISTS USER")
-createUserTable = '''CREATE TABLE USER(
-Name VARCHAR(100), login VARCHAR(100),
-password VARCHAR(100), startTime time,
-endTime time
-)'''
-cursor.execute(createUserTable)
+createTable = '''CREATE TABLE USER(
+Name VARCHAR(100), Ph int, startTime TIME,
+endTime TIME, PType VARCHAR(30), PValue1 VARCHAR(30), PValue2 VARCHAR(30), 
+CF1Num VARCHAR(30), CF2Num VARCHAR(30), CF3Num VARCHAR(30))'''
+
+cursor.execute(createTable)
+
 # Insert data into the table when you get it
-cursor.execute("INSERT INTO USER VALUES ('Asad','abaloch', 'isthebest', 070000, 010000)")
+a="badminton"
+cursor.execute(f"INSERT INTO USER VALUES ('Asad','abaloch', 'isthebest', 070000, 010000, \'{a}\','NULL','NULL', 'ss','ss')")
+
+b = "select PType from User;"
+b=cursor.execute("select PType from User;")
 
 cursor.execute("SELECT * FROM USER")
 
 # printing the cursor data
 print(cursor.fetchall())
+
+
+
+
 
 # create Password table
 cursor.execute("DROP TABLE IF EXISTS PW")
